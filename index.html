@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,72 +31,137 @@
     <div class="adjustments" style="display: none;"> <!-- Initially hidden -->
         <h3>Adjustments (Post-LUT)</h3>
         <div class="adjustment-column">
+            <!-- Example: Brightness -->
             <div class="adjustment-group">
-                <label for="brightnessSlider">Brightness:</label>
-                <input type="range" id="brightnessSlider" min="-100" max="100" value="0" step="1">
-                <span class="value-display" id="brightnessValue">0</span>
+                <label for="brightnessValue">Brightness:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="brightnessValue">-</button>
+                    <span class="value-display" id="brightnessValue" data-param-name="brightness" data-min="-100"
+                        data-max="100" data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="brightnessValue">+</button>
+                </div>
             </div>
+            <!-- Example: Exposure -->
             <div class="adjustment-group">
-                <label for="exposureSlider">Exposure:</label>
-                <input type="range" id="exposureSlider" min="-100" max="100" value="0" step="1">
-                <span class="value-display" id="exposureValue">0</span>
+                <label for="exposureValue">Exposure:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="exposureValue">-</button>
+                    <span class="value-display" id="exposureValue" data-param-name="exposure" data-min="-100"
+                        data-max="100" data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="exposureValue">+</button>
+                </div>
             </div>
+            <!-- Example: Contrast -->
             <div class="adjustment-group">
-                <label for="contrastSlider">Contrast:</label>
-                <input type="range" id="contrastSlider" min="0" max="200" value="100" step="1">
-                <span class="value-display" id="contrastValue">100%</span>
+                <label for="contrastValue">Contrast:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="contrastValue">-</button>
+                    <span class="value-display" id="contrastValue" data-param-name="contrast" data-min="0"
+                        data-max="200" data-step="1" data-default="100" data-is-percent="true">100%</span>
+                    <button class="adj-button adj-increment" data-target-id="contrastValue">+</button>
+                </div>
             </div>
+            <!-- Example: Highlights -->
             <div class="adjustment-group">
-                <label for="highlightsSlider">Highlights:</label>
-                <input type="range" id="highlightsSlider" min="-100" max="100" value="0" step="1">
-                <span class="value-display" id="highlightsValue">0</span>
+                <label for="highlightsValue">Highlights:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="highlightsValue">-</button>
+                    <span class="value-display" id="highlightsValue" data-param-name="highlights" data-min="-100"
+                        data-max="100" data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="highlightsValue">+</button>
+                </div>
             </div>
+            <!-- Example: Shadows -->
             <div class="adjustment-group">
-                <label for="shadowsSlider">Shadows:</label>
-                <input type="range" id="shadowsSlider" min="-100" max="100" value="0" step="1">
-                <span class="value-display" id="shadowsValue">0</span>
+                <label for="shadowsValue">Shadows:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="shadowsValue">-</button>
+                    <span class="value-display" id="shadowsValue" data-param-name="shadows" data-min="-100"
+                        data-max="100" data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="shadowsValue">+</button>
+                </div>
             </div>
+            <!-- Example: Black Point -->
             <div class="adjustment-group">
-                <label for="blackPointSlider">Black Point:</label>
-                <input type="range" id="blackPointSlider" min="0" max="50" value="0" step="1">
-                <span class="value-display" id="blackPointValue">0</span>
+                <label for="blackPointValue">Black Point:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="blackPointValue">-</button>
+                    <span class="value-display" id="blackPointValue" data-param-name="blackPoint" data-min="0"
+                        data-max="50" data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="blackPointValue">+</button>
+                </div>
             </div>
+            <!-- Example: Warmth -->
             <div class="adjustment-group">
-                <label for="warmthSlider">Warmth:</label>
-                <input type="range" id="warmthSlider" min="-100" max="100" value="0" step="1">
-                <span class="value-display" id="warmthValue">0</span>
+                <label for="warmthValue">Warmth:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="warmthValue">-</button>
+                    <span class="value-display" id="warmthValue" data-param-name="warmth" data-min="-100" data-max="100"
+                        data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="warmthValue">+</button>
+                </div>
             </div>
+            <!-- Example: Tint -->
             <div class="adjustment-group">
-                <label for="tintSlider">Tint:</label>
-                <input type="range" id="tintSlider" min="-100" max="100" value="0" step="1">
-                <span class="value-display" id="tintValue">0</span>
+                <label for="tintValue">Tint:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="tintValue">-</button>
+                    <span class="value-display" id="tintValue" data-param-name="tint" data-min="-100" data-max="100"
+                        data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="tintValue">+</button>
+                </div>
             </div>
         </div>
         <div class="adjustment-column">
+            <!-- Example: Saturation -->
             <div class="adjustment-group">
-                <label for="saturationSlider">Saturation:</label>
-                <input type="range" id="saturationSlider" min="0" max="200" value="100" step="1">
-                <span class="value-display" id="saturationValue">100%</span>
+                <label for="saturationValue">Saturation:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="saturationValue">-</button>
+                    <span class="value-display" id="saturationValue" data-param-name="saturation" data-min="0"
+                        data-max="200" data-step="1" data-default="100" data-is-percent="true">100%</span>
+                    <button class="adj-button adj-increment" data-target-id="saturationValue">+</button>
+                </div>
             </div>
+            <!-- Example: Vibrancy -->
             <div class="adjustment-group">
-                <label for="vibrancySlider">Vibrancy:</label>
-                <input type="range" id="vibrancySlider" min="-100" max="100" value="0" step="1">
-                <span class="value-display" id="vibrancyValue">0</span>
+                <label for="vibrancyValue">Vibrancy:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="vibrancyValue">-</button>
+                    <span class="value-display" id="vibrancyValue" data-param-name="vibrancy" data-min="-100"
+                        data-max="100" data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="vibrancyValue">+</button>
+                </div>
             </div>
+            <!-- Example: Sharpness -->
             <div class="adjustment-group">
-                <label for="sharpnessSlider">Sharpness:</label>
-                <input type="range" id="sharpnessSlider" min="0" max="100" value="0" step="1">
-                <span class="value-display" id="sharpnessValue">0</span>
+                <label for="sharpnessValue">Sharpness:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="sharpnessValue">-</button>
+                    <span class="value-display" id="sharpnessValue" data-param-name="sharpness" data-min="0"
+                        data-max="100" data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="sharpnessValue">+</button>
+                </div>
             </div>
+            <!-- Example: Noise Reduction -->
             <div class="adjustment-group">
-                <label for="noiseReductionSlider">Noise Red.:</label>
-                <input type="range" id="noiseReductionSlider" min="0" max="100" value="0" step="1">
-                <span class="value-display" id="noiseReductionValue">0</span>
+                <label for="noiseReductionValue">Noise Red.:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="noiseReductionValue">-</button>
+                    <span class="value-display" id="noiseReductionValue" data-param-name="noiseReduction" data-min="0"
+                        data-max="100" data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="noiseReductionValue">+</button>
+                </div>
             </div>
+            <!-- Example: Vignette -->
             <div class="adjustment-group">
-                <label for="vignetteSlider">Vignette:</label>
-                <input type="range" id="vignetteSlider" min="-100" max="100" value="0" step="1">
-                <span class="value-display" id="vignetteValue">0</span>
+                <label for="vignetteValue">Vignette:</label>
+                <div class="value-control">
+                    <button class="adj-button adj-decrement" data-target-id="vignetteValue">-</button>
+                    <span class="value-display" id="vignetteValue" data-param-name="vignette" data-min="-100"
+                        data-max="100" data-step="1" data-default="0">0</span>
+                    <button class="adj-button adj-increment" data-target-id="vignetteValue">+</button>
+                </div>
             </div>
             <button id="resetAdjustmentsButton">Reset Adjustments</button>
         </div>
