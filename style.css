@@ -1,0 +1,337 @@
+ body {
+    background-color: #1a1a1a;
+    /* Dark background */
+    color: #ffffff;
+    /* White text */
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-weight: normal;
+    color: #ccc;
+    /* Slightly dimmer white for subheadings */
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 20px;
+    /* Space between input groups */
+    margin-bottom: 20px;
+    background-color: #2a2a2a;
+    /* Slightly lighter background for controls */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between label and input */
+}
+
+label {
+    font-weight: bold;
+    /* Combined label styling here, adjust in specific sections if needed */
+}
+
+/* Basic styling for file inputs */
+input[type="file"] {
+    color: #ffffff;
+    padding: 5px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #333;
+    max-width: 250px;
+    /* Prevent inputs becoming too wide */
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #666;
+}
+
+/* Apply Button Styling */
+#applyLutButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    /* Space above */
+    transition: background-color 0.2s ease;
+}
+
+#applyLutButton:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+#applyLutButton:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+#status {
+    margin-top: 15px;
+    /* Adjusted spacing */
+    margin-bottom: 15px;
+    /* Reduced spacing */
+    font-style: italic;
+    min-height: 1.2em;
+    /* Prevent layout shift */
+    color: #aaa;
+    text-align: center;
+}
+
+/* Adjustment Controls Styling */
+.adjustments {
+    background-color: #2a2a2a;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    margin-bottom: 25px;
+    width: 95%;
+    /* Increased width */
+    max-width: 750px;
+    /* Increased max-width */
+    box-sizing: border-box;
+    display: flex;
+    /* Use flexbox for columns */
+    flex-wrap: wrap;
+    /* Allow wrapping if needed */
+    justify-content: space-between;
+    /* Space out columns */
+    gap: 20px;
+    /* Gap between columns */
+}
+
+.adjustments h3 {
+    width: 100%;
+    /* Make header span full width */
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ddd;
+    font-weight: bold;
+    flex-basis: 100%;
+    /* Ensure header takes full row */
+}
+
+.adjustment-column {
+    flex: 1;
+    /* Allow columns to grow */
+    min-width: 300px;
+    /* Minimum width before wrapping */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Gap between controls in a column */
+}
+
+
+.adjustment-group {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    /* Gap handled by column gap */
+    gap: 10px;
+}
+
+/* Specific label styling for adjustment groups */
+.adjustment-group label {
+    flex-basis: 90px;
+    /* Slightly wider fixed width for labels */
+    flex-shrink: 0;
+    color: #ccc;
+    font-weight: normal;
+    /* Override default bold */
+    text-align: right;
+    font-size: 0.9em;
+    /* Slightly smaller label text */
+}
+
+input[type="range"] {
+    flex-grow: 1;
+    cursor: pointer;
+    height: 5px;
+    background: #555;
+    border-radius: 5px;
+    accent-color: #007bff;
+    /* Modern way to color thumb and track */
+    appearance: none;
+    /* Override default look */
+    -webkit-appearance: none;
+    outline: none;
+}
+
+/* Custom Thumb Styles (Webkit - Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 15px;
+    /* Slightly smaller thumb */
+    height: 15px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -5px;
+    /* Adjust vertical centering if track height changes */
+}
+
+/* Custom Thumb Styles (Firefox) */
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    /* Remove default border */
+}
+
+/* Custom Track Styles (Optional - for browsers not fully supporting accent-color) */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: #555;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: #555;
+    border-radius: 5px;
+}
+
+
+.value-display {
+    min-width: 45px;
+    text-align: right;
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+#resetAdjustmentsButton {
+    display: block;
+    margin: 15px 0 0 0;
+    /* Top margin, no horizontal auto (column centers it) */
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    align-self: center;
+    /* Center within the flex column */
+    grid-column: span 2;
+    /* If using grid layout inside column - might not be needed */
+}
+
+
+#resetAdjustmentsButton:hover {
+    background-color: #5a6268;
+}
+
+
+.preview-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 95%;
+    max-width: 1200px;
+    /* Adjust as needed */
+    margin-top: 30px;
+    /* Add space above previews */
+}
+
+.image-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    /* Adjust as needed */
+    text-align: center;
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+}
+
+canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background-color: #333;
+    border: 1px solid #555;
+    margin: 0 auto 15px auto;
+    /* Center horizontally, add bottom margin */
+    image-rendering: pixelated;
+    /* Optional: Keep pixels sharp on scaling */
+    image-rendering: crisp-edges;
+    /* For Firefox */
+}
+
+/* Download Link styled as button */
+#downloadLink.button-like {
+    display: inline-block;
+    background-color: #28a745;
+    /* Green */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    margin-top: auto;
+    /* Push to bottom of flex container */
+    align-self: center;
+    /* Center horizontally within flex container */
+}
+
+#downloadLink.button-like:hover {
+    background-color: #218838;
+}
+

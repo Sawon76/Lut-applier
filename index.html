@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image LUT Applicator (.cube/.3dl) with Adjustments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Apply .CUBE / .3DL LUT to Image with Adjustments</h1>
+
+    <div class="controls">
+        <div class="input-group">
+            <label for="imageInput">1. Upload Image:</label>
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
+        <div class="input-group">
+            <label for="lutInput">2. Upload .cube or .3dl LUT:</label>
+            <input type="file" id="lutInput" accept=".cube,.3dl">
+        </div>
+    </div>
+
+    <button id="applyLutButton" disabled>Apply LUT</button>
+
+    <p id="status">Please upload an image and a LUT file.</p>
+
+    <!-- Adjustment Controls -->
+    <div class="adjustments" style="display: none;"> <!-- Initially hidden -->
+        <h3>Adjustments (Post-LUT)</h3>
+        <div class="adjustment-column">
+            <div class="adjustment-group">
+                <label for="brightnessSlider">Brightness:</label>
+                <input type="range" id="brightnessSlider" min="-100" max="100" value="0" step="1">
+                <span class="value-display" id="brightnessValue">0</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="exposureSlider">Exposure:</label>
+                <input type="range" id="exposureSlider" min="-100" max="100" value="0" step="1">
+                <span class="value-display" id="exposureValue">0</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="contrastSlider">Contrast:</label>
+                <input type="range" id="contrastSlider" min="0" max="200" value="100" step="1">
+                <span class="value-display" id="contrastValue">100%</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="highlightsSlider">Highlights:</label>
+                <input type="range" id="highlightsSlider" min="-100" max="100" value="0" step="1">
+                <span class="value-display" id="highlightsValue">0</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="shadowsSlider">Shadows:</label>
+                <input type="range" id="shadowsSlider" min="-100" max="100" value="0" step="1">
+                <span class="value-display" id="shadowsValue">0</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="blackPointSlider">Black Point:</label>
+                <input type="range" id="blackPointSlider" min="0" max="50" value="0" step="1">
+                <span class="value-display" id="blackPointValue">0</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="warmthSlider">Warmth:</label>
+                <input type="range" id="warmthSlider" min="-100" max="100" value="0" step="1">
+                <span class="value-display" id="warmthValue">0</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="tintSlider">Tint:</label>
+                <input type="range" id="tintSlider" min="-100" max="100" value="0" step="1">
+                <span class="value-display" id="tintValue">0</span>
+            </div>
+        </div>
+        <div class="adjustment-column">
+            <div class="adjustment-group">
+                <label for="saturationSlider">Saturation:</label>
+                <input type="range" id="saturationSlider" min="0" max="200" value="100" step="1">
+                <span class="value-display" id="saturationValue">100%</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="vibrancySlider">Vibrancy:</label>
+                <input type="range" id="vibrancySlider" min="-100" max="100" value="0" step="1">
+                <span class="value-display" id="vibrancyValue">0</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="sharpnessSlider">Sharpness:</label>
+                <input type="range" id="sharpnessSlider" min="0" max="100" value="0" step="1">
+                <span class="value-display" id="sharpnessValue">0</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="noiseReductionSlider">Noise Red.:</label>
+                <input type="range" id="noiseReductionSlider" min="0" max="100" value="0" step="1">
+                <span class="value-display" id="noiseReductionValue">0</span>
+            </div>
+            <div class="adjustment-group">
+                <label for="vignetteSlider">Vignette:</label>
+                <input type="range" id="vignetteSlider" min="-100" max="100" value="0" step="1">
+                <span class="value-display" id="vignetteValue">0</span>
+            </div>
+            <button id="resetAdjustmentsButton">Reset Adjustments</button>
+        </div>
+
+    </div>
+
+    <div class="preview-container">
+        <div class="image-box">
+            <h2>Before</h2>
+            <canvas id="beforeCanvas"></canvas>
+        </div>
+        <div class="image-box">
+            <h2>After (with Adjustments)</h2>
+            <canvas id="afterCanvas"></canvas>
+            <a id="downloadLink" class="button-like" style="display: none;">Download Result</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
